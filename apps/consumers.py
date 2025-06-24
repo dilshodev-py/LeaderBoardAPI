@@ -1,7 +1,10 @@
 import json
+
+from asgiref.sync import async_to_sync
 from channels.generic.websocket import AsyncWebsocketConsumer
 
 from apps.models import Student
+from apps.serializers import StudentModelSerializer
 
 
 class LeaderBoardConsumer(AsyncWebsocketConsumer):
