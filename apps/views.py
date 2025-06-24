@@ -23,7 +23,10 @@ class AddCoinsToStudentAPIView(generics.GenericAPIView):
 
         return Response({"message": f"{coin_amount} coins added successfully."}, status=status.HTTP_200_OK)
 
-
 class StudentCreateAPIView(CreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentModelSerializer
+
+class StudentListAPIView(generics.ListAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentModelSerializer
