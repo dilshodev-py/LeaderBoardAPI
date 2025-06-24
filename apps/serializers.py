@@ -1,9 +1,6 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 
-from apps.models import Student
 
-
-class StudentModelSerializer(ModelSerializer):
-    class Meta:
-        model = Student
-        fields = "__all__"
+class AddCoinsToStudentSerializer(serializers.Serializer):
+    coin = serializers.IntegerField(min_value=1)

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'rest_framework',
     'drf_spectacular',
-    'apps'
+    'apps',
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
