@@ -1,9 +1,12 @@
-from rest_framework.serializers import ModelSerializer
-
+from rest_framework import serializers
 from apps.models import Student
 
 
-class StudentModelSerializer(ModelSerializer):
+class AddCoinsToStudentSerializer(serializers.Serializer):
+    coin = serializers.IntegerField(min_value=1)
+
+
+class StudentModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields =  'name' , 'rank'
+        fields = "__all__"
